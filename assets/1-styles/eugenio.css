@@ -113,6 +113,12 @@ body * {
 }
 .hero__title {
   font-family: "NunitoSans-Bold";
+  font-size: calc(1.5rem + 3vw);
+}
+@media (min-width: 1200px) {
+  .hero__title {
+    font-size: 3.75rem;
+  }
 }
 
 /*# sourceMappingURL=eugenio.css.map */
