@@ -1,0 +1,24 @@
+@use "sass:map";
+
+$fonts__nunito: (
+  reg: 'NunitoSans-Regular',
+  reg--i: 'NunitoSans-Italic',
+  black: 'NunitoSans-Black',
+  black--i: 'NunitoSans-BlackItalic',
+  bold: 'NunitoSans-Bold',
+  bold--i: 'NunitoSans-BoldItalic',
+  exbold--i: 'NunitoSans-ExtraBoldItalic',
+  exlight: 'NunitoSans-ExtraLight',
+  exlight--i: 'NunitoSans-ExtraLightItalic',
+  light: 'NunitoSans-Light',
+  light--i: 'NunitoSans-LightItalic',
+  semibold:'NunitoSans-SemiBold',
+  semibold--i:'NunitoSans-SemiBoldItalic'
+);
+@each $name, $font in $fonts__nunito {
+  @include font-face($font, '../0-typography/nunito-sans/#{$font}');
+}
+
+@mixin get-nunito-font($style) {
+  font-family: map.get($fonts__nunito, $style);
+}

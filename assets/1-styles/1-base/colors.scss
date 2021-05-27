@@ -1,0 +1,34 @@
+
+// name, value, isBackground, isText
+$colors: (
+  "dark-green" #1A3129 true true,
+  "light-green" #55A086 true true,
+  "brown" #F7B27B true false,
+  "maroon" #781616 true false,
+  "white" #FFFFFF true true,
+  "black" #191919 false true,
+  "grey-one" #F7F7F7 true true,
+  "grey-two" #EFEFEF true true,
+);
+
+@mixin createText($name, $value, $isText) {
+  @if $isText {
+    .text--#{$name} {
+      color: $value;
+    }
+  }
+}
+
+@mixin createBackground($name, $value, $isBackground) {
+  @if $isBackground {
+    .bg--#{$name} {
+      background: $value;
+    }
+  }
+}
+
+@each $name, $value, $isBackground, $isText in $colors {
+  @include createText($name, $value, $isText);
+  @include createBackground($name, $value, $isBackground);
+}
+

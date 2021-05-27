@@ -1,0 +1,10 @@
+
+.hero {
+  .eugenio-logo {
+    position: relative;
+    top: 100px;
+  }
+  @at-root #{&}__title {
+    @include get-nunito-font('bold');
+  }
+}
