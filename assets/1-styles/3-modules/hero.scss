@@ -2,10 +2,24 @@
 .hero {
   .eugenio-logo {
     position: relative;
-    top: 100px;
   }
   @at-root #{&}__title {
-    @include get-nunito-font('bold');
+    @extend .text--light-green;
+    @include get-font('light--ex');
     @include font-size(60px);
+    letter-spacing: 4.2px;
+    line-height: 70px;
+    text-transform: uppercase;
+    font-weight: lighter;
+      strong {
+        @include get-font('bold');
+      }
+  }
+  @at-root #{&}__text {
+    @extend .text--white;
+    @include font-size(20px);
+    line-height: 26px;
+    letter-spacing: 1px;
+    font-family: Roboto;
   }
 }

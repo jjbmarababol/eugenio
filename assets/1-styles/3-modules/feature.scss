@@ -1,0 +1,18 @@
+.feature {
+  @extend .text--black;
+  text-align: center;
+  font-family: Roboto;
+  @at-root #{&}__title {
+    @extend .feature;
+    @include font-size(30px);
+    line-height: 28px;
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+  }
+  @at-root #{&}__text {
+    @extend .feature;
+    letter-spacing: 0.8px;
+    line-height: 26px;
+
+  }
+}

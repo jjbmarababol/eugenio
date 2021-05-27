@@ -1,0 +1,23 @@
+.section {
+  // SECTION TITLES
+  @at-root #{&}__title {
+    @extend .text--light-green;
+    @include get-font('reg');
+    @include font-size(30px);
+    letter-spacing: 1.5px;
+    text-align: center;
+    line-height: 40px;
+    text-transform: uppercase;
+    
+    strong {
+      @include get-font('bold--ex');
+    }
+
+    @at-root #{&}--logos {
+      text-align: center;
+      letter-spacing: 4.5px;
+      font: normal normal normal 18px/40px;
+      @include font-size(18px);
+    }
+  }
+}

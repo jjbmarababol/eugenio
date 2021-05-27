@@ -1,24 +1,56 @@
 @use "sass:map";
 
+$fonts__websafe: Verdana, Geneva, Tahoma, sans-serif;
 $fonts__nunito: (
   reg: 'NunitoSans-Regular',
-  reg--i: 'NunitoSans-Italic',
-  black: 'NunitoSans-Black',
-  black--i: 'NunitoSans-BlackItalic',
-  bold: 'NunitoSans-Bold',
-  bold--i: 'NunitoSans-BoldItalic',
-  exbold--i: 'NunitoSans-ExtraBoldItalic',
-  exlight: 'NunitoSans-ExtraLight',
-  exlight--i: 'NunitoSans-ExtraLightItalic',
   light: 'NunitoSans-Light',
-  light--i: 'NunitoSans-LightItalic',
-  semibold:'NunitoSans-SemiBold',
-  semibold--i:'NunitoSans-SemiBoldItalic'
+  light--ex: 'NunitoSans-ExtraLights',
+  bold: 'NunitoSans-Bold',
+  bold--ex: 'NunitoSans-ExtraBold',
 );
+$fonts__roboto: (
+  reg: 'Roboto-Regular',
+  bold: 'Roboto-Bold',
+  light: 'Roboto-Light',
+  light--i: 'Roboto-Light',
+);
+
 @each $name, $font in $fonts__nunito {
-  @include font-face($font, '../0-typography/nunito-sans/#{$font}');
+  @include font-face($font, '../0-typography/nunito-sans/#{$font}', normal, normal, "ttf");
+ 
+  .text--#{$name} {
+    @include get-font( $name);
+  }
 }
 
-@mixin get-nunito-font($style) {
-  font-family: map.get($fonts__nunito, $style);
+@each $name, $font in $fonts__roboto {
+  @include font-face($font, '../0-typography/roboto/#{$font}', normal, normal, "ttf");
+}
+
+@mixin get-font($style, $family: 'nunito') {
+  @if $family == 'nunito' {
+    font-family: map.get($fonts__nunito, $style), $fonts__websafe;
+  }
+  @if $family == 'roboto' {
+    font-family: map.get($fonts__roboto, $style), $fonts__websafe;
+  }
+}
+
+body {
+  * {
+    @include get-font('light--ex');
+  }
+  
+  p {
+    @include get-font('reg');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include get-font('bold');
+  }
 }
