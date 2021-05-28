@@ -1,31 +1,43 @@
-.counter {
+.cta {
   @extend .text--white;
+  @include get-font('reg', 'roboto');
   text-align: center;
-  font-family: Roboto;
   @at-root #{&}__title {
-    @extend .counter;
+    @extend .cta;
+    @include get-font('bold', 'roboto');
     @include font-size(20px);
     line-height: 28px;
+    letter-spacing: 1px;
     font-weight: bolder;
   }
+
   @at-root #{&}__text {
     @extend .text--white;
-    @extend .counter;
+    @extend .cta;
     @include get-font('light--ex');
     @include font-size(70px);
     letter-spacing: 0.8px;
-    line-height: 65x;
+    line-height: 65px;
     letter-spacing: 14px;
     text-align: center;
     text-transform: uppercase;
     font-weight: lighter;
+
     strong {
       @include get-font('bold');
       font-weight: bolder;
     }
+
+    @at-root #{&}--question {
+      @include font-size(47px);
+      line-height: 63px;
+      letter-spacing: 2.35px;
+    }
   }
-  @at-root #{&}__cta {
+  @at-root #{&}__button {
     @extend .bg--brown;
+    @extend .text--black;
+    @include get-font('bold', 'roboto');
     @include font-size(14px);
     text-transform: uppercase;
     font-weight: bolder;

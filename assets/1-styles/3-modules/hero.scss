@@ -17,9 +17,9 @@
   }
   @at-root #{&}__text {
     @extend .text--white;
+    @include get-font('light', 'roboto');
     @include font-size(20px);
     line-height: 26px;
     letter-spacing: 1px;
-    font-family: Roboto;
   }
 }

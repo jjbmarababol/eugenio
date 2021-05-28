@@ -1,0 +1,27 @@
+
+#blog{
+  // FEATURED BLOG
+  @at-root #{&}__featured{
+    .inner-wrap {
+      display: flex;
+      flex-flow: row;
+    }
+    .blog-recent {
+      .col {
+        margin: 0;
+      }
+    }
+    .img-link {
+      flex: 3 0 45%;
+      margin: 0;
+      padding: 0;
+    }
+    .article-content-wrap{
+      background: transparent;
+      flex: 1 0 50%;
+      padding: 0 50px;
+      align-self: center;
+    }
+       
+  }
+}

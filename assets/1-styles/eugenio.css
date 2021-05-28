@@ -1,19 +1,342 @@
-/* Error: Undefined mixin.
- *    ,
- * 21 |     @include get-font( $name);
- *    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   1-styles/1-base/typography.scss 21:5  @import
- *   1-styles/1-base/base-dir.scss 2:9     @import
- *   1-styles/eugenio.scss 2:9             root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 21 \2502      @include get-font( $name);\d\a    \2502      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   1-styles/1-base/typography.scss 21:5  @import\a   1-styles/1-base/base-dir.scss 2:9     @import\a   1-styles/eugenio.scss 2:9             root stylesheet";
+body * {
+  margin: 0;
+  padding: 0;
 }
+
+@font-face {
+  font-family: "NunitoSans-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/nunito-sans/NunitoSans-Regular.ttf") format("truetype");
+}
+.text--reg {
+  font-family: "NunitoSans-Regular", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "NunitoSans-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/nunito-sans/NunitoSans-Light.ttf") format("truetype");
+}
+.text--light {
+  font-family: "NunitoSans-Light", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "NunitoSans-ExtraLight";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/nunito-sans/NunitoSans-ExtraLight.ttf") format("truetype");
+}
+.text--light--ex {
+  font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "NunitoSans-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/nunito-sans/NunitoSans-Bold.ttf") format("truetype");
+}
+.text--bold {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "NunitoSans-ExtraBold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/nunito-sans/NunitoSans-ExtraBold.ttf") format("truetype");
+}
+.text--bold--ex {
+  font-family: "NunitoSans-ExtraBold", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/roboto/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../0-typography/roboto/Roboto-Light.ttf") format("truetype");
+}
+body * {
+  font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
+}
+body p {
+  font-family: "NunitoSans-Regular", Verdana, Geneva, Tahoma, sans-serif;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text--dark-green {
+  color: #1A3129;
+}
+
+.bg--dark-green {
+  background: #1A3129;
+}
+
+.text--light-green, .section__title, .hero__title {
+  color: #55A086;
+}
+
+.bg--light-green {
+  background: #55A086;
+}
+
+.bg--brown, .cta__button {
+  background: #F7B27B;
+}
+
+.bg--maroon {
+  background: #781616;
+}
+
+.text--white, .cta__text, .cta, .cta__title, .section__title--services, .hero__text {
+  color: #FFFFFF;
+}
+
+.bg--white {
+  background: #FFFFFF;
+}
+
+.text--black, .cta__button, .feature, .feature__text, .feature__title {
+  color: #191919;
+}
+
+.text--grey-one {
+  color: #F7F7F7;
+}
+
+.bg--grey-one {
+  background: #F7F7F7;
+}
+
+.text--grey-two {
+  color: #EFEFEF;
+}
+
+.bg--grey-two {
+  background: #EFEFEF;
+}
+
+.hero .eugenio-logo {
+  position: relative;
+}
+.hero__title {
+  font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.5rem + 3vw);
+  letter-spacing: 4.2px;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+@media (min-width: 1200px) {
+  .hero__title {
+    font-size: 3.75rem;
+  }
+}
+.hero__title strong {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero__text {
+  font-family: "Roboto-Light", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  line-height: 26px;
+  letter-spacing: 1px;
+}
+
+.section__title {
+  font-family: "NunitoSans-Light", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.3125rem + 0.75vw);
+  font-weight: lighter;
+  letter-spacing: 1.5px;
+  text-align: center;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .section__title {
+    font-size: 1.875rem;
+  }
+}
+.section__title strong {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+.section__title--logos {
+  font-size: 1.125rem;
+  text-align: center;
+  letter-spacing: 4.5px;
+  line-height: 40px;
+}
+
+.section__title--services {
+  font-size: calc(1.41875rem + 2.025vw);
+  text-align: center;
+  letter-spacing: 2.35px;
+  line-height: 63px;
+}
+@media (min-width: 1200px) {
+  .section__title--services {
+    font-size: 2.9375rem;
+  }
+}
+
+.section__content--services {
+  padding: 100px 20px 40px;
+  background: #b74343;
+  border-radius: 22px 22px 0 0;
+  margin-bottom: 0px !important;
+}
+
+.section__image--services {
+  width: 100%;
+}
+
+.feature, .feature__text, .feature__title {
+  font-family: "Roboto-Light", Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.feature__title {
+  font-size: calc(1.3125rem + 0.75vw);
+  padding-bottom: 0.9375rem;
+  line-height: 28px;
+  letter-spacing: 1.5px;
+  font-weight: lighter;
+}
+@media (min-width: 1200px) {
+  .feature__title {
+    font-size: 1.875rem;
+  }
+}
+
+.feature__text {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  line-height: 26px;
+}
+
+.cta, .cta__text, .cta__title {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.cta__title {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  line-height: 28px;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
+.cta__text {
+  font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.5625rem + 3.75vw);
+  letter-spacing: 0.8px;
+  line-height: 65px;
+  letter-spacing: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+@media (min-width: 1200px) {
+  .cta__text {
+    font-size: 4.375rem;
+  }
+}
+.cta__text strong {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+.cta__text--question {
+  font-size: calc(1.41875rem + 2.025vw);
+  line-height: 63px;
+  letter-spacing: 2.35px;
+}
+@media (min-width: 1200px) {
+  .cta__text--question {
+    font-size: 2.9375rem;
+  }
+}
+
+.cta__button {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  line-height: 12px;
+  border-radius: 26px;
+  letter-spacing: 0.7px;
+}
+
+#events__upcoming .article-content-wrap, #events__upcoming .inner-wrap {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  line-height: 26px;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #F7F7F7, #EFEFEF);
+}
+#events__upcoming .article-content-wrap .post-header, #events__upcoming .inner-wrap .post-header {
+  font-size: 1.25rem;
+  line-height: 28px;
+  letter-spacing: 0.8px;
+}
+#events__upcoming .inner-wrap {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  display: flex;
+  flex-flow: column-reverse;
+}
+#events__upcoming .meta-category {
+  display: none;
+}
+#events__upcoming .post-featured-img img {
+  margin: 0 auto 35px;
+}
+
+#blog__featured .inner-wrap {
+  display: flex;
+  flex-flow: row;
+}
+#blog__featured .blog-recent .col {
+  margin: 0;
+}
+#blog__featured .img-link {
+  flex: 3 0 45%;
+  margin: 0;
+  padding: 0;
+}
+#blog__featured .article-content-wrap, #blog__featured #events__upcoming .inner-wrap, #events__upcoming #blog__featured .inner-wrap {
+  background: transparent;
+  flex: 1 0 50%;
+  padding: 0 50px;
+  align-self: center;
+}
+
+/*# sourceMappingURL=eugenio.css.map */

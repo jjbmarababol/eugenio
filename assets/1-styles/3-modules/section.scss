@@ -1,23 +1,46 @@
 .section {
-  // SECTION TITLES
   @at-root #{&}__title {
     @extend .text--light-green;
-    @include get-font('reg');
+    @include get-font('light');
     @include font-size(30px);
+    font-weight: lighter;
     letter-spacing: 1.5px;
     text-align: center;
     line-height: 40px;
     text-transform: uppercase;
     
     strong {
-      @include get-font('bold--ex');
+      @include get-font('bold');
+      font-weight: bolder;
     }
 
     @at-root #{&}--logos {
+      @include font-size(18px);
       text-align: center;
       letter-spacing: 4.5px;
-      font: normal normal normal 18px/40px;
-      @include font-size(18px);
+      line-height: 40px;
+    }
+
+    @at-root #{&}--services {
+      @extend .text--white;
+      @include font-size(47px);
+      text-align: center;
+      letter-spacing: 2.35px;
+      line-height: 63px;
+    }
+  }
+
+  @at-root #{&}__content {
+    @at-root #{&}--services {
+      padding: 100px 20px 40px;
+      background: #b74343;
+      border-radius: 22px 22px 0 0;
+      margin-bottom: 0px !important;
+    }
+  }
+  @at-root #{&}__image {
+    @at-root #{&}--services {
+      width: 100%;
     }
   }
 }

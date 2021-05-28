@@ -4,7 +4,7 @@ $fonts__websafe: Verdana, Geneva, Tahoma, sans-serif;
 $fonts__nunito: (
   reg: 'NunitoSans-Regular',
   light: 'NunitoSans-Light',
-  light--ex: 'NunitoSans-ExtraLights',
+  light--ex: 'NunitoSans-ExtraLight',
   bold: 'NunitoSans-Bold',
   bold--ex: 'NunitoSans-ExtraBold',
 );
@@ -14,6 +14,15 @@ $fonts__roboto: (
   light: 'Roboto-Light',
   light--i: 'Roboto-Light',
 );
+
+@mixin get-font($style, $family: 'nunito') {
+  @if $family == 'nunito' {
+    font-family: map.get($fonts__nunito, $style), $fonts__websafe;
+  }
+  @if $family == 'roboto' {
+    font-family: map.get($fonts__roboto, $style), $fonts__websafe;
+  }
+}
 
 @each $name, $font in $fonts__nunito {
   @include font-face($font, '../0-typography/nunito-sans/#{$font}', normal, normal, "ttf");
@@ -25,15 +34,6 @@ $fonts__roboto: (
 
 @each $name, $font in $fonts__roboto {
   @include font-face($font, '../0-typography/roboto/#{$font}', normal, normal, "ttf");
-}
-
-@mixin get-font($style, $family: 'nunito') {
-  @if $family == 'nunito' {
-    font-family: map.get($fonts__nunito, $style), $fonts__websafe;
-  }
-  @if $family == 'roboto' {
-    font-family: map.get($fonts__roboto, $style), $fonts__websafe;
-  }
 }
 
 body {
