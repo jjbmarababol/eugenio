@@ -1,0 +1,52 @@
+
+
+#footer {
+  @at-root #{&}-outer {
+    @extend .bg--dark-green;
+    #copyright {
+      display: none;
+    }
+    .row {
+      padding: 30px 0;
+    }
+  }
+  @at-root #{&}-widgets {
+    .row {
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+    }
+    .one-fourths {
+      flex: 1 0 30%;
+      @at-root #{&}:nth-of-type(1) {
+        flex: 1 0 100%;
+        text-align: center;
+      }
+     }
+  }
+}
+
+.footer-section {
+  .logos {
+    svg {
+      width: 26px;
+      height: 26px;
+      transform: rotate(90deg);
+      margin: 0 2px;
+    }
+  }
+  .contact-info {
+    @extend .text--light-green;
+    @include get-font('reg');
+    @include font-size(16px);
+    line-height: 30px;
+    letter-spacing: 0.8px;
+
+    ul {
+      @include padding-bottom(25px);
+    }
+    li {
+      @include margin-top(-12px); 
+    }
+  }
+}
