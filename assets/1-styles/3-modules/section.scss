@@ -3,20 +3,24 @@
     @extend .text--light-green;
     @include get-font('light');
     @include font-size(30px);
+    @include margin-bottom(12px);
     font-weight: lighter;
     letter-spacing: 1.5px;
-    text-align: center;
     line-height: 40px;
     text-transform: uppercase;
     
     strong {
-      @include get-font('bold');
+      @include get-font('bold--ex');
       font-weight: bolder;
+    }
+    @at-root #{&}--gallery {
+      @include margin-top(30px);
+      letter-spacing: 0;
+      text-transform: initial;
     }
 
     @at-root #{&}--logos {
       @include font-size(18px);
-      text-align: center;
       letter-spacing: 4.5px;
       line-height: 40px;
     }
@@ -24,7 +28,6 @@
     @at-root #{&}--services {
       @extend .text--white;
       @include font-size(47px);
-      text-align: center;
       letter-spacing: 2.35px;
       line-height: 63px;
     }

@@ -1,0 +1,32 @@
+
+.gallery {
+  @at-root #{&}__hero {
+    @at-root #{&}-title {
+      @extend .text--white;
+      @include get-font('bold--ex');
+      @include font-size(50px);
+      letter-spacing: 2.5px;
+      line-height: 60px;
+      text-transform: uppercase;
+    }
+    @at-root #{&}-sub-title {
+      @extend .section__title;
+      @extend .text--white;
+    }
+    @at-root #{&}-caption {
+      @extend .text--white;
+      @include get-font('bold');
+      @include font-size(25px);
+      letter-spacing: 0;
+      font-weight: lighter;
+      line-height: 30px;
+    }
+    @at-root #{&}-meta {
+      @extend .text--white;
+      @include get-font('bold');
+      @include font-size(15px);
+      letter-spacing: 0;
+      line-height: 70px;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.generic {
+  @at-root #{&}__title {
+    @include get-font('light');
+    @include font-size(60px);
+    font-weight: lighter;
+    letter-spacing: 4.2px;
+    line-height: 70px;
+    text-transform: uppercase;
+    strong {
+    @include get-font('bold');
+    font-weight: bolder;
+    }
+    @at-root #{&}--medium {
+      @include font-size(40px);
+      letter-spacing: 2.8px;
+      line-height: 45px;
+    }
+    @at-root #{&}--small {
+      @include font-size(20px);
+      letter-spacing: 1px;
+      line-height: 30px;
+    }
+  }
+  @at-root #{&}__caption {
+    @include get-font('reg', 'roboto');
+    @include font-size(24px);
+    letter-spacing: 1.2px;
+    line-height: 29px;
+  }
+  @at-root #{&}__sub {
+    @extend .text--light-green;
+    @include font-size(14px);
+    @include get-font('bold', 'roboto');
+    line-height: 12px;
+    letter-spacing: 0.7px;
+  }
+  @at-root #{&}__content {
+    @include get-font('reg','roboto');
+    @include font-size(16px);
+    @include padding-bottom(15px);
+    letter-spacing: 0.6px;
+    line-height: 26px;
+    @at-root #{&}--light {
+      @include get-font('light','roboto');
+    }
+    strong {
+      @include get-font('bold', 'roboto');
+      font-weight: bolder;
+      }
+  }
+  @at-root #{&}__list {
+    li {
+      @include get-font('bold', 'roboto');
+      @include font-size(16px);
+      list-style: none;
+      letter-spacing: 0.6px;
+      line-height: 26px;
+      padding-left: 1em;
+      text-indent: -1em;
+    }
+    li:before {
+      content: ";";
+      padding-right: 10px;
+    }
+    @at-root ul#{&} {
+      @include padding-bottom(15px);
+      margin-left: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    @at-root ol#{&} {
+    list-style: none;
+    margin-left: 0;
+    li {
+      @include font-size(20px);
+      @include get-font('reg', 'roboto');
+      @include margin-bottom(9px);
+      font-style: italic;
+      counter-increment: custom;
+      letter-spacing: 1px;
+      line-height: 25px;
+      @at-root #{&}:before {
+        content: counter(custom) " ) ";   
+      }
+      @at-root #{&}:first-child {
+        counter-reset: custom;
+        
+      }
+    }
+    }
+  }
+
+  @at-root #{&}__card{
+    background: transparent linear-gradient(180deg, #EFEFEF 0%, #F5F5F5 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+    mix-blend-mode: multiply;
+    border-radius: 8px;
+    opacity: 1;
+    backdrop-filter: blur(37px);
+    -webkit-backdrop-filter: blur(37px);
+  }
+}

@@ -1,16 +1,22 @@
+@use "sass:list";
 
 // name, value, isBackground, isText
 $colors: (
-  "dark-green" #1A3129 true true,
+  "dark-green" #061913 true true,
+  "green" #1A3129 true true,
+  "dirty-green" #B4D3C8  true true,
   "light-green" #55A086 true true,
-  "brown" #F7B27B true false,
-  "maroon" #781616 true false,
+  "brown" #F7B27B true true,
+  "maroon" #781616 true,
   "white" #FFFFFF true true,
   "black" #191919 false true,
   "grey-one" #F7F7F7 true true,
   "grey-two" #EFEFEF true true,
 );
 
+$green: #1A3129;
+$light-green: #55A086;
+$gradient--green: transparent linear-gradient(180deg, #244539 0%, #1A3129 100%) 0% 0% no-repeat padding-box;
 @mixin createText($name, $value, $isText) {
   @if $isText {
     .text--#{$name} {
@@ -22,13 +28,22 @@ $colors: (
 @mixin createBackground($name, $value, $isBackground) {
   @if $isBackground {
     .bg--#{$name} {
-      background: $value;
+      background-color: $value;
     }
   }
 }
 
-@each $name, $value, $isBackground, $isText in $colors {
+@mixin createBorder($name, $value, $isBorder) {
+  @if $isBorder {
+    .border--#{$name} {
+      border-color: $value;
+    }
+  }
+}
+
+@each $name, $value, $isBackground, $isText, $isBorder in $colors {
   @include createText($name, $value, $isText);
   @include createBackground($name, $value, $isBackground);
+  @include createBorder($name, $value, $isBorder);
 }
 

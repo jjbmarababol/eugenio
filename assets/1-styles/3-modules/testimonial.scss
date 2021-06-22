@@ -1,0 +1,25 @@
+.testimonial {
+  @at-root #{&}__message {
+    @include get-font('light', 'roboto');
+    @include font-size(22px);
+    letter-spacing: 1.1px;
+    font-style: italic;
+    line-height: 26px;
+  }
+  @at-root #{&}__author {
+    .author {
+      @at-root #{&}__name {
+        @include get-font('bold', 'roboto');
+        @include font-size(20px);
+        @include margin-bottom(4px);
+        letter-spacing: 1px;
+        line-height: 28px;
+      }
+      @at-root #{&}__job {
+        @include get-font('reg', 'roboto');
+        @include font-size(16px);
+        line-height: 16px;
+      }
+    }
+  }
+}

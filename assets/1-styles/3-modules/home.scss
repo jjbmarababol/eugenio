@@ -1,0 +1,25 @@
+.home {
+  @at-root #{&}__counter-section {
+    .counter{
+      @at-root #{&}__title {
+        @include get-font('bold', 'roboto');
+        @include font-size(20px);
+        @include margin-bottom(45px);
+        letter-spacing: 1px;
+        line-height: 28px;
+
+      }
+      @at-root #{&}__count {
+        @include get-font('light--ex');
+        @include font-size(70px);
+        @include margin-bottom(45px);
+        letter-spacing: 14px;
+        line-height: 65px;
+        text-transform: uppercase;
+        strong{
+          @include get-font('bold');
+        }
+      }
+    }
+  }
+}

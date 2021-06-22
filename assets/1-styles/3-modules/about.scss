@@ -1,0 +1,43 @@
+.about {
+  @at-root #{&}__card {
+    padding: 26px 27px;
+    @include padding-bottom(26px 27px);
+    background: #ffffff82 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    max-width: 370px;
+    @at-root #{&}--eugenio {
+      position: relative;
+      top: 30px;
+    }
+    @at-root #{&}--marie {
+      position: relative;
+      top: 180px;
+    }
+    @at-root #{&}-content {
+      @include font-size(12px);
+      line-height: 18px;
+      letter-spacing: 0.6px;
+    }
+
+  }
+  @at-root #{&}__title {
+    @extend .generic__title;
+    @include font-size(30px);
+    letter-spacing: 1.05px;
+    line-height: 45px;
+    strong {
+      @include font-size(40px);
+      letter-spacing: 1.4px;
+    } 
+    @at-root #{&}--small {
+      @include font-size(15px);
+      letter-spacing: 1.05px;
+      line-height: 23px;
+      strong {
+      @include font-size(20px);
+      letter-spacing: 1.4px;
+      } 
+    }
+  }
+  
+}

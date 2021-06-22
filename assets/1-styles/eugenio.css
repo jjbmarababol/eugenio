@@ -2,6 +2,33 @@ body * {
   margin: 0;
   padding: 0;
 }
+body ul li {
+  display: list-item;
+}
+
+.align--left, body .contact-form__section#contact-form--newsletter .field, #blog__featured .post-header .title {
+  text-align: left;
+}
+
+.align--center, #events__upcoming .event__image {
+  text-align: center;
+}
+
+.align--right {
+  text-align: right;
+}
+
+.align--justify {
+  text-align: justify;
+}
+
+.text--normal {
+  font-style: "normal";
+}
+
+.text--italic {
+  font-style: "italic";
+}
 
 @font-face {
   font-family: "NunitoSans-Regular";
@@ -72,10 +99,10 @@ body * {
   src: url("../0-typography/roboto/Roboto-Light.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Roboto-Light";
+  font-family: "Roboto-LightItalic";
   font-style: normal;
   font-weight: normal;
-  src: url("../0-typography/roboto/Roboto-Light.ttf") format("truetype");
+  src: url("../0-typography/roboto/Roboto-LightItalic.ttf") format("truetype");
 }
 body * {
   font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
@@ -92,39 +119,59 @@ body h6 {
   font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.text--dark-green {
-  color: #1A3129;
+.text--dark-green, .button--brown, #cta__section .cta__button {
+  color: #061913;
 }
 
 .bg--dark-green, #footer-outer {
-  background: #1A3129;
+  background-color: #061913;
 }
 
-.text--light-green, .section__title, .hero__title, .footer-section .contact-info {
+.text--green, #newsletter .newsletter__text {
+  color: #1A3129;
+}
+
+.bg--green, body .contact-form__section#contact-form--footer .field {
+  background-color: #1A3129;
+}
+
+.text--dirty-green, body .contact-form__section#contact-form--footer .field {
+  color: #B4D3C8;
+}
+
+.bg--dirty-green, .button--dirty-green, body .contact-form__section#contact-form--footer #contact-us-form__submit-button.submit {
+  background-color: #B4D3C8;
+}
+
+.text--light-green, .services__sub, .services__title, #blog__featured .post-header::after, #events__upcoming .event__calendar-cta, .section__title, .gallery__hero-sub-title, .hero__title, .cards .card__cta, .get-updated, .button--dirty-green, body .contact-form__section#contact-form--footer #contact-us-form__submit-button.submit, .generic__sub, .cards .card__sub, .footer-section .contact-info {
   color: #55A086;
 }
 
-.bg--light-green {
-  background: #55A086;
+.bg--light-green, .button--primary, body .contact-form__section#contact-form--newsletter .submit, .services__cta-button {
+  background-color: #55A086;
 }
 
-.bg--brown, .cta__button {
-  background: #F7B27B;
+.text--brown, .cards .card--red .card__cta {
+  color: #F7B27B;
+}
+
+.bg--brown, .button--brown, #cta__section .cta__button {
+  background-color: #F7B27B;
 }
 
 .bg--maroon {
-  background: #781616;
+  background-color: #781616;
 }
 
-.text--white, .cta__text, .cta, .cta__title, .section__title--services, .hero__text {
+.text--white, .gallery__hero-meta, .gallery__hero-caption, .gallery__hero-sub-title, .gallery__hero-title, #cta__section .cta__text, #cta__section .cta, #cta__section .cta__title, .section__title--services, .hero__text, .button--primary, body .contact-form__section#contact-form--newsletter .submit, .services__cta-button {
   color: #FFFFFF;
 }
 
 .bg--white {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
-.text--black, .cta__button, .feature, .feature__text, .feature__title {
+.text--black, .services--bazi .question-items li, #blog-list .meta-category .header, #blog__featured, #events__upcoming .event__info li, #events__upcoming .event__date {
   color: #191919;
 }
 
@@ -133,7 +180,7 @@ body h6 {
 }
 
 .bg--grey-one {
-  background: #F7F7F7;
+  background-color: #F7F7F7;
 }
 
 .text--grey-two {
@@ -141,11 +188,14 @@ body h6 {
 }
 
 .bg--grey-two {
-  background: #EFEFEF;
+  background-color: #EFEFEF;
 }
 
 #footer-outer #copyright {
-  display: none;
+  font-family: "NunitoSans-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.7px;
+  line-height: 30px;
 }
 #footer-outer .row {
   padding: 30px 0;
@@ -188,9 +238,291 @@ body h6 {
   margin-top: -0.75rem;
 }
 
+.generic__title, .about__title, .services__title {
+  font-family: "NunitoSans-Light", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.5rem + 3vw);
+  font-weight: lighter;
+  letter-spacing: 4.2px;
+  line-height: 70px;
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .generic__title, .about__title, .services__title {
+    font-size: 3.75rem;
+  }
+}
+.generic__title strong, .about__title strong, .services__title strong {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+.generic__title--medium {
+  font-size: calc(1.375rem + 1.5vw);
+  letter-spacing: 2.8px;
+  line-height: 45px;
+}
+@media (min-width: 1200px) {
+  .generic__title--medium {
+    font-size: 2.5rem;
+  }
+}
+
+.generic__title--small {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.generic__caption {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.275rem + 0.3vw);
+  letter-spacing: 1.2px;
+  line-height: 29px;
+}
+@media (min-width: 1200px) {
+  .generic__caption {
+    font-size: 1.5rem;
+  }
+}
+
+.generic__sub, .cards .card__sub {
+  font-size: 0.875rem;
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 12px;
+  letter-spacing: 0.7px;
+}
+
+.generic__content, .services__content, .cards .card__description {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  padding-bottom: 0.9375rem;
+  letter-spacing: 0.6px;
+  line-height: 26px;
+}
+.generic__content--light {
+  font-family: "Roboto-Light", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.generic__content strong, .services__content strong, .cards .card__description strong {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+
+.generic__list li {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  list-style: none;
+  letter-spacing: 0.6px;
+  line-height: 26px;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.generic__list li:before {
+  content: ";";
+  padding-right: 10px;
+}
+ul.generic__list {
+  padding-bottom: 0.9375rem;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+ol.generic__list {
+  list-style: none;
+  margin-left: 0;
+}
+ol.generic__list li {
+  font-size: 1.25rem;
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 0.5625rem;
+  font-style: italic;
+  counter-increment: custom;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+ol.generic__list li:before {
+  content: counter(custom) " ) ";
+}
+
+ol.generic__list li:first-child {
+  counter-reset: custom;
+}
+
+.generic__card {
+  background: transparent linear-gradient(180deg, #EFEFEF 0%, #F5F5F5 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  mix-blend-mode: multiply;
+  border-radius: 8px;
+  opacity: 1;
+  backdrop-filter: blur(37px);
+  -webkit-backdrop-filter: blur(37px);
+}
+
+.button, body .contact-form__section#contact-form--newsletter .submit, body .contact-form__section#contact-form--footer #contact-us-form__submit-button.submit, .services__cta-button, #cta__section .cta__button {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  border: none;
+  padding: 13px 70px !important;
+  border-radius: 26px !important;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.button--primary, body .contact-form__section#contact-form--newsletter .submit, .services__cta-button {
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+}
+
+.button--brown.button--brown-inverted, #cta__section .button--brown-inverted.cta__button {
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  padding: 12px 48px;
+  border: 2px solid #F7B27B;
+  color: #F7B27B;
+  background-color: transparent;
+}
+
+.button--medium, #cta__section .cta__button {
+  font-size: 0.875rem;
+  padding: 16px 38px !important;
+  letter-spacing: 0.7px;
+}
+
+.button--mini, body .contact-form__section#contact-form--newsletter .submit, body .contact-form__section#contact-form--footer #contact-us-form__submit-button.submit {
+  font-size: 0.75rem;
+  padding: 8px 26px !important;
+  letter-spacing: 0.6px;
+}
+
+.get-updated {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.7px;
+  line-height: 15px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding: 20px 15px;
+  background-color: #EFEFEF;
+}
+
+.cards .card {
+  width: 540px;
+  min-height: 530px;
+  background: transparent linear-gradient(180deg, #efefef 0%, #F5F5F5 45%, #ffffff00 100%) 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  padding: 0 !important;
+}
+.cards .card__content {
+  padding: calc(1.65625rem + 4.875vw) calc(1.34375rem + 1.125vw) 0;
+}
+@media (min-width: 1200px) {
+  .cards .card__content {
+    padding: 5.3125rem 2.1875rem 0;
+  }
+}
+
+.cards .card__description {
+  margin-bottom: 1.0625rem;
+  max-height: 130px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.cards .card__sub {
+  margin-bottom: 1.0625rem;
+}
+
+.cards .card__title {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.3rem + 0.6vw);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  line-height: 35px;
+}
+@media (min-width: 1200px) {
+  .cards .card__title {
+    font-size: 1.75rem;
+  }
+}
+
+.cards .card__cta {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  line-height: 12px;
+}
+
+.cards .card__image {
+  height: 216px;
+  width: 100%;
+}
+
+.cards .card--red {
+  min-height: 440px;
+  padding: 0 !important;
+  margin: 10px 1% !important;
+  max-width: 30%;
+  border-radius: 50px;
+  background: transparent linear-gradient(180deg, #b74343 45%, #b7434300 100%) 0% 0% no-repeat padding-box;
+}
+.cards .card--red .card__content {
+  padding: calc(1.5625rem + 3.75vw) calc(1.34375rem + 1.125vw) 0;
+}
+@media (min-width: 1200px) {
+  .cards .card--red .card__content {
+    padding: 4.375rem 2.1875rem 0;
+  }
+}
+
+.cards .card--red .card__title {
+  font-family: "Roboto-Light", Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 35px;
+  font-weight: lighter;
+}
+.cards .card--red .card__title strong {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+
+.cards .card--red .card__cta {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  margin-top: calc(1.3125rem + 0.75vw);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 12px;
+}
+@media (min-width: 1200px) {
+  .cards .card--red .card__cta {
+    margin-top: 1.875rem;
+  }
+}
+
+.cards .card--red .card__description {
+  max-height: 180px;
+  -webkit-line-clamp: 7;
+}
+
+.cards .card--red .card__image {
+  height: 167px;
+  width: 100%;
+}
+
 .hero .eugenio-logo {
   position: relative;
 }
+.hero__content > .vc_column-inner {
+  padding: 90px;
+  padding-left: 12vw;
+}
+.hero__content--right > .vc_column-inner {
+  padding: 90px 15vw 90px 33px;
+}
+
 .hero__title {
   font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
   font-size: calc(1.5rem + 3vw);
@@ -215,34 +547,43 @@ body h6 {
   letter-spacing: 1px;
 }
 
-.section__title {
+.section__title, .gallery__hero-sub-title {
   font-family: "NunitoSans-Light", Verdana, Geneva, Tahoma, sans-serif;
   font-size: calc(1.3125rem + 0.75vw);
+  margin-bottom: 0.75rem;
   font-weight: lighter;
   letter-spacing: 1.5px;
-  text-align: center;
   line-height: 40px;
   text-transform: uppercase;
 }
 @media (min-width: 1200px) {
-  .section__title {
+  .section__title, .gallery__hero-sub-title {
     font-size: 1.875rem;
   }
 }
-.section__title strong {
-  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+.section__title strong, .gallery__hero-sub-title strong {
+  font-family: "NunitoSans-ExtraBold", Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
 }
+.section__title--gallery {
+  margin-top: calc(1.3125rem + 0.75vw);
+  letter-spacing: 0;
+  text-transform: initial;
+}
+@media (min-width: 1200px) {
+  .section__title--gallery {
+    margin-top: 1.875rem;
+  }
+}
+
 .section__title--logos {
   font-size: 1.125rem;
-  text-align: center;
   letter-spacing: 4.5px;
   line-height: 40px;
 }
 
 .section__title--services {
   font-size: calc(1.41875rem + 2.025vw);
-  text-align: center;
   letter-spacing: 2.35px;
   line-height: 63px;
 }
@@ -273,6 +614,7 @@ body h6 {
   line-height: 28px;
   letter-spacing: 1.5px;
   font-weight: lighter;
+  text-transform: uppercase;
 }
 @media (min-width: 1200px) {
   .feature__title {
@@ -287,21 +629,29 @@ body h6 {
   line-height: 26px;
 }
 
-.cta, .cta__text, .cta__title {
+#cta__section .cta, #cta__section .cta__text, #cta__section .cta__title {
   font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
-.cta__title {
+#cta__section .cta__title {
   font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.25rem;
+  margin-bottom: calc(1.40625rem + 1.875vw);
   line-height: 28px;
   letter-spacing: 1px;
   font-weight: bolder;
 }
+@media (min-width: 1200px) {
+  #cta__section .cta__title {
+    margin-bottom: 2.8125rem;
+  }
+}
 
-.cta__text {
+#cta__section .cta__text {
   font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
   font-size: calc(1.5625rem + 3.75vw);
+  margin-bottom: calc(1.40625rem + 1.875vw);
+  margin-top: calc(1.28125rem + 0.375vw);
   letter-spacing: 0.8px;
   line-height: 65px;
   letter-spacing: 14px;
@@ -310,58 +660,74 @@ body h6 {
   font-weight: lighter;
 }
 @media (min-width: 1200px) {
-  .cta__text {
+  #cta__section .cta__text {
     font-size: 4.375rem;
   }
 }
-.cta__text strong {
+@media (min-width: 1200px) {
+  #cta__section .cta__text {
+    margin-bottom: 2.8125rem;
+  }
+}
+@media (min-width: 1200px) {
+  #cta__section .cta__text {
+    margin-top: 1.5625rem;
+  }
+}
+#cta__section .cta__text strong {
   font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
 }
-.cta__text--question {
+#cta__section .cta__text--question {
   font-size: calc(1.41875rem + 2.025vw);
   line-height: 63px;
   letter-spacing: 2.35px;
 }
 @media (min-width: 1200px) {
-  .cta__text--question {
+  #cta__section .cta__text--question {
     font-size: 2.9375rem;
   }
 }
 
-.cta__button {
+#events__upcoming .event {
+  border-radius: 9px;
+  padding: 50px 30px 30px;
+  margin: 10px auto;
+  width: 90%;
+  background: linear-gradient(180deg, #F7F7F7, #EFEFEF);
+}
+#events__upcoming .event__date {
   font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 0.875rem;
-  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 28px;
   font-weight: bolder;
-  line-height: 12px;
-  border-radius: 26px;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.8px;
 }
 
-#events__upcoming .article-content-wrap, #events__upcoming .inner-wrap {
+#events__upcoming .event__info {
+  margin-bottom: 0.625rem;
+}
+#events__upcoming .event__info li {
   font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
   line-height: 26px;
   letter-spacing: 1px;
-  background: linear-gradient(180deg, #F7F7F7, #EFEFEF);
+  list-style-type: none;
 }
-#events__upcoming .article-content-wrap .post-header, #events__upcoming .inner-wrap .post-header {
-  font-size: 1.25rem;
-  line-height: 28px;
-  letter-spacing: 0.8px;
-}
-#events__upcoming .inner-wrap {
+
+#events__upcoming .event__calendar-cta {
   font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bolder;
-  display: flex;
-  flex-flow: column-reverse;
+  margin-bottom: calc(1.28125rem + 0.375vw);
+  font-size: 0.75rem;
+  display: block;
+  text-transform: uppercase;
+  line-height: 12px;
+  letter-spacing: 0.6px;
 }
-#events__upcoming .meta-category {
-  display: none;
-}
-#events__upcoming .post-featured-img img {
-  margin: 0 auto 35px;
+@media (min-width: 1200px) {
+  #events__upcoming .event__calendar-cta {
+    margin-bottom: 1.5625rem;
+  }
 }
 
 #blog__featured .inner-wrap {
@@ -371,16 +737,339 @@ body h6 {
 #blog__featured .blog-recent .col {
   margin: 0;
 }
+#blog__featured .post-header {
+  display: flex;
+  flex-flow: column-reverse;
+  text-transform: uppercase;
+}
+#blog__featured .post-header::after {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  content: "FEATURED BLOG";
+  letter-spacing: 1.6px;
+  line-height: 28px;
+}
+#blog__featured .post-header .title {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.3125rem + 0.75vw);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 40px;
+}
+@media (min-width: 1200px) {
+  #blog__featured .post-header .title {
+    font-size: 1.875rem;
+  }
+}
+#blog__featured .post-header .meta {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.7px;
+  line-height: 26px;
+}
+#blog__featured .excerpt {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  line-height: 26px;
+}
 #blog__featured .img-link {
   flex: 3 0 45%;
   margin: 0;
   padding: 0;
 }
-#blog__featured .article-content-wrap, #blog__featured #events__upcoming .inner-wrap, #events__upcoming #blog__featured .inner-wrap {
+#blog__featured .article-content-wrap {
   background: transparent;
   flex: 1 0 50%;
   padding: 0 50px;
   align-self: center;
+}
+
+#blog-list .meta-category .events {
+  display: none;
+}
+#blog-list .meta-category .header {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.3rem + 0.6vw);
+  letter-spacing: 1.4px;
+  line-height: 40px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #55A086;
+}
+@media (min-width: 1200px) {
+  #blog-list .meta-category .header {
+    font-size: 1.75rem;
+  }
+}
+
+.services__sub {
+  font-size: 0.875rem;
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 12px;
+  letter-spacing: 0.7px;
+}
+
+.services__cta-section {
+  padding-top: 30px;
+}
+.services__cta-section .logos {
+  padding: 20px 0;
+}
+.services__cta-section svg {
+  width: 26px;
+  height: 26px;
+  transform: rotate(90deg);
+  margin: 0 2px;
+}
+
+.services__divider {
+  border: 2px solid #55A086;
+  margin: 1.25rem 0;
+}
+
+.services--bazi .avatar {
+  position: absolute;
+  top: -52vh;
+  min-width: 75vh;
+  left: -5vw;
+}
+ul.services--bazi .question-items {
+  list-style: none;
+}
+
+.services--bazi .question-items li {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.275rem + 0.3vw);
+  padding: 1.25rem 0;
+  border-bottom: 2px solid grey;
+  letter-spacing: 0.24px;
+  line-height: 29px;
+  list-style: none;
+}
+@media (min-width: 1200px) {
+  .services--bazi .question-items li {
+    font-size: 1.5rem;
+  }
+}
+
+body .contact-form__section#contact-form--footer br {
+  display: none;
+}
+body .contact-form__section#contact-form--footer .field {
+  font-family: "NunitoSans-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  letter-spacing: 0.7px;
+  line-height: 16px;
+  max-height: 28px;
+}
+body .contact-form__section#contact-form--footer .textarea {
+  min-height: 120px;
+  padding: 0.625rem;
+  margin-bottom: -0.3125rem;
+}
+body .contact-form__section#contact-form--footer #contact-us-form__submit-button.submit {
+  max-height: 28px;
+  background-color: #1A3129 !important;
+}
+
+body .contact-form__section#contact-form--newsletter {
+  display: flex;
+  flex-flow: row;
+  align-items: baseline;
+}
+body .contact-form__section#contact-form--newsletter .field {
+  font-size: 0.875rem;
+  border: 1px solid #B4D3C8;
+  border-radius: 3px !important;
+  max-height: 28px;
+  width: 350px;
+}
+body .contact-form__section#contact-form--newsletter .submit {
+  margin-left: 5px;
+  max-height: 28px;
+}
+
+#newsletter {
+  padding: 20px 0 !important;
+}
+#newsletter .newsletter--small {
+  min-height: 115px;
+}
+
+#newsletter .newsletter__text {
+  font-family: "NunitoSans-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.28125rem + 0.375vw);
+  letter-spacing: 0.75px;
+  line-height: 54px;
+  font-weight: lighter;
+}
+@media (min-width: 1200px) {
+  #newsletter .newsletter__text {
+    font-size: 1.5625rem;
+  }
+}
+#newsletter .newsletter__text strong {
+  font-family: "NunitoSans-ExtraBold", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.about__card {
+  padding: 26px 27px;
+  padding-bottom: calc(1.2875rem + 0.45vw) calc(1.29375rem + 0.525vw);
+  background: #ffffff82 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  max-width: 370px;
+}
+@media (min-width: 1200px) {
+  .about__card {
+    padding-bottom: 1.625rem 1.6875rem;
+  }
+}
+.about__card--eugenio {
+  position: relative;
+  top: 30px;
+}
+
+.about__card--marie {
+  position: relative;
+  top: 180px;
+}
+
+.about__card-content {
+  font-size: 0.75rem;
+  line-height: 18px;
+  letter-spacing: 0.6px;
+}
+
+.about__title {
+  font-size: calc(1.3125rem + 0.75vw);
+  letter-spacing: 1.05px;
+  line-height: 45px;
+}
+@media (min-width: 1200px) {
+  .about__title {
+    font-size: 1.875rem;
+  }
+}
+.about__title strong {
+  font-size: calc(1.375rem + 1.5vw);
+  letter-spacing: 1.4px;
+}
+@media (min-width: 1200px) {
+  .about__title strong {
+    font-size: 2.5rem;
+  }
+}
+.about__title--small {
+  font-size: 0.9375rem;
+  letter-spacing: 1.05px;
+  line-height: 23px;
+}
+.about__title--small strong {
+  font-size: 1.25rem;
+  letter-spacing: 1.4px;
+}
+
+.home__counter-section .counter__title {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: calc(1.40625rem + 1.875vw);
+  letter-spacing: 1px;
+  line-height: 28px;
+}
+@media (min-width: 1200px) {
+  .home__counter-section .counter__title {
+    margin-bottom: 2.8125rem;
+  }
+}
+
+.home__counter-section .counter__count {
+  font-family: "NunitoSans-ExtraLight", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.5625rem + 3.75vw);
+  margin-bottom: calc(1.40625rem + 1.875vw);
+  letter-spacing: 14px;
+  line-height: 65px;
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .home__counter-section .counter__count {
+    font-size: 4.375rem;
+  }
+}
+@media (min-width: 1200px) {
+  .home__counter-section .counter__count {
+    margin-bottom: 2.8125rem;
+  }
+}
+.home__counter-section .counter__count strong {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.testimonial__message {
+  font-family: "Roboto-Light", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.2625rem + 0.15vw);
+  letter-spacing: 1.1px;
+  font-style: italic;
+  line-height: 26px;
+}
+@media (min-width: 1200px) {
+  .testimonial__message {
+    font-size: 1.375rem;
+  }
+}
+
+.testimonial__author .author__name {
+  font-family: "Roboto-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 1px;
+  line-height: 28px;
+}
+
+.testimonial__author .author__job {
+  font-family: "Roboto-Regular", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  line-height: 16px;
+}
+
+body .clients > div {
+  margin-bottom: 0;
+}
+
+.gallery__hero-title {
+  font-family: "NunitoSans-ExtraBold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.4375rem + 2.25vw);
+  letter-spacing: 2.5px;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .gallery__hero-title {
+    font-size: 3.125rem;
+  }
+}
+
+.gallery__hero-caption {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(1.28125rem + 0.375vw);
+  letter-spacing: 0;
+  font-weight: lighter;
+  line-height: 30px;
+}
+@media (min-width: 1200px) {
+  .gallery__hero-caption {
+    font-size: 1.5625rem;
+  }
+}
+
+.gallery__hero-meta {
+  font-family: "NunitoSans-Bold", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9375rem;
+  letter-spacing: 0;
+  line-height: 70px;
 }
 
 /*# sourceMappingURL=eugenio.css.map */

@@ -1,0 +1,64 @@
+.services {
+  @at-root #{&}__title {
+    @extend .text--light-green;
+    @extend .generic__title;
+  }
+  @at-root #{&}__sub {
+    @extend .text--light-green;
+    @include font-size(14px);
+    @include get-font('bold','roboto');
+    line-height: 12px;
+    letter-spacing: 0.7px;
+  }
+  @at-root #{&}__content {
+    @extend .generic__content;
+  }
+  @at-root #{&}__cta {
+    @at-root #{&}-button {
+      @extend .button, .button--primary;
+    }
+    @at-root #{&}-section {
+      padding-top: 30px;
+      .logos {
+        padding: 20px 0;
+      }
+      svg {
+        width: 26px;
+        height: 26px;
+        transform: rotate(90deg);
+        margin: 0 2px;
+      }
+    }
+  }
+  @at-root #{&}__divider {
+    border: 2px solid #55A086;
+    @include margin(20px 0);
+  }
+
+
+  // BAZI
+  @at-root #{&}--bazi {
+    .avatar {
+      position: absolute;
+      top: -52vh;
+      min-width: 75vh;
+      left: -5vw;
+    }
+    .question-items {
+      @at-root ul#{&} {
+        list-style: none;
+      }
+      li {
+        @extend .text--black;
+        @include get-font('reg','roboto');
+        @include font-size(24px);
+        @include padding(20px 0);
+        border-bottom: 2px solid grey;
+        letter-spacing: 0.24px;
+        line-height: 29px;
+        list-style: none;
+
+      }
+    }
+  }
+}

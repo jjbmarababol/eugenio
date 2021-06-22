@@ -1,0 +1,56 @@
+.button {
+  @include get-font('bold', 'roboto');
+  @include font-size(20px);
+  border: none;
+  padding: 13px 70px !important;
+  border-radius: 26px !important;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+ 
+  @at-root #{&}--primary {
+    @extend .bg--light-green;
+    @extend .text--white;
+    border-radius: 30px !important;
+    -webkit-border-radius: 30px !important;
+  } 
+  @at-root #{&}--brown {
+    @extend .bg--brown;
+    @extend .text--dark-green;
+    @at-root &#{&}-inverted {
+      border-radius: 30px !important;
+      -webkit-border-radius: 30px !important;
+      padding: 12px 48px;
+      border: 2px solid #F7B27B;
+      color: #F7B27B;
+      background-color: transparent;
+    }
+  }
+  @at-root #{&}--dirty-green {
+    @extend .bg--dirty-green;
+    @extend .text--light-green;
+  }
+  @at-root #{&}--medium {
+    @include font-size(14px);
+    padding: 16px 38px !important;
+    letter-spacing: 0.7px;
+  }
+  @at-root #{&}--mini {
+    @include font-size(12px);
+    padding: 8px 26px !important;
+    letter-spacing: 0.6px;
+  }
+}
+
+.get-updated {
+  @extend .text--light-green;
+  @include get-font('bold', 'roboto');
+  @include font-size(14px);
+  letter-spacing: 0.7px;
+  line-height: 15px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding: 20px 15px;
+  background-color: #EFEFEF;
+}

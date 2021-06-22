@@ -12,8 +12,11 @@ $fonts__roboto: (
   reg: 'Roboto-Regular',
   bold: 'Roboto-Bold',
   light: 'Roboto-Light',
-  light--i: 'Roboto-Light',
+  light--i: 'Roboto-LightItalic',
 );
+
+$alignments: (left, center, right, justify);
+$styles: ('normal', 'italic');
 
 @mixin get-font($style, $family: 'nunito') {
   @if $family == 'nunito' {
@@ -21,6 +24,18 @@ $fonts__roboto: (
   }
   @if $family == 'roboto' {
     font-family: map.get($fonts__roboto, $style), $fonts__websafe;
+  }
+}
+
+@each $alignment in $alignments {
+  .align--#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+@each $style in $styles {
+  .text--#{$style} {
+    font-style: $style;
   }
 }
 

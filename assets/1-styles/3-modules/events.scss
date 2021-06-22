@@ -1,31 +1,43 @@
 $events-background:linear-gradient(180deg, #F7F7F7, #EFEFEF);
 #events {
   @at-root #{&}__upcoming {
-    .article-content-wrap {
-      @include get-font('reg', 'roboto');
-      @include font-size(16px);
-      line-height: 26px;
-      letter-spacing: 1px;
+    .event {
+      border-radius: 9px;
+      padding: 50px 30px 30px;
+      margin: 10px auto;
+      width: 90%;
       background: $events-background;
-      .post-header {
+      @at-root #{&}__date {
+        @extend .text--black;
+        @include get-font('bold', 'roboto');
         @include font-size(20px);
         line-height: 28px;
+        font-weight: bolder;
         letter-spacing: 0.8px;
       }
-    }
-    .inner-wrap {
-      @extend .article-content-wrap;
-      @include get-font('bold', 'roboto');
-      font-weight: bolder;
-      display: flex;
-      flex-flow: column-reverse;
-    }
-    .meta-category {
-      display: none;
-    }
-    .post-featured-img {
-      img {
-        margin: 0 auto 35px;
+      @at-root #{&}__info{
+        @include margin-bottom(10px);
+        li {
+          @extend .text--black;
+          @include get-font('reg', 'roboto');
+          @include font-size(16px);
+          line-height: 26px;
+          letter-spacing: 1px;
+          list-style-type: none;
+        }
+      }
+      @at-root #{&}__image {
+        @extend .align--center;
+      }
+      @at-root #{&}__calendar-cta {
+        @extend .text--light-green;
+        @include get-font('bold', 'roboto');
+        @include margin-bottom(25px);
+        @include font-size(12px);
+        display: block;
+        text-transform: uppercase;
+        line-height: 12px;
+        letter-spacing: 0.6px;
       }
     }
   }

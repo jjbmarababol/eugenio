@@ -3,6 +3,17 @@
   .eugenio-logo {
     position: relative;
   }
+  @at-root #{&}__content {
+    > .vc_column-inner {
+      padding: 90px;
+      padding-left: 12vw;
+    }
+    @at-root #{&}--right {
+      > .vc_column-inner {
+        padding: 90px 15vw 90px 33px;
+      }
+    }
+  }
   @at-root #{&}__title {
     @extend .text--light-green;
     @include get-font('light--ex');

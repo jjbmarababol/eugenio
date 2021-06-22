@@ -1,0 +1,54 @@
+body {
+  .contact-form{
+    @at-root #{&}__section {
+      &#contact-form{
+        @at-root #{&}--footer {
+          br {
+            display: none;
+          }
+          .field{
+            @extend .bg--green;
+            @extend .text--dirty-green;
+            @include get-font('reg');
+            @include font-size(14px);
+            @include margin-bottom(8px);
+            border: none;
+            letter-spacing: 0.7px;
+            line-height: 16px;
+            max-height: 28px;
+          }
+          .textarea{
+            min-height: 120px;
+            @include padding(10px);
+            @include margin-bottom(-5px);
+          }
+          
+          #contact-us-form__submit-button.submit{
+            @extend .button, .button--mini, .button--dirty-green;
+            max-height: 28px;
+            background-color: $green !important;
+          }
+        }
+        @at-root #{&}--newsletter {
+          display: flex;
+          flex-flow: row;
+          align-items: baseline;
+         
+          .field {
+            @extend .align--left;
+            @include font-size(14px);
+            border: 1px solid #B4D3C8;
+            border-radius: 3px !important;
+            max-height: 28px;
+            width: 350px;
+          }
+          .submit {
+            @extend .button, .button--primary, .button--mini;
+            margin-left: 5px;
+            max-height: 28px;
+          }
+        }
+      }
+    }
+  }
+}

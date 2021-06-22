@@ -4,7 +4,10 @@
   @at-root #{&}-outer {
     @extend .bg--dark-green;
     #copyright {
-      display: none;
+      @include get-font('reg');
+      @include font-size(14px);
+      letter-spacing: 0.7px;
+      line-height: 30px;
     }
     .row {
       padding: 30px 0;

@@ -1,5 +1,4 @@
 .feature {
-  @extend .text--black;
   @include get-font('light', 'roboto');
   text-align: center;
   @at-root #{&}__title {
@@ -9,6 +8,7 @@
     line-height: 28px;
     letter-spacing: 1.5px;
     font-weight: lighter;
+    text-transform: uppercase;
   }
   @at-root #{&}__text {
     @extend .feature;

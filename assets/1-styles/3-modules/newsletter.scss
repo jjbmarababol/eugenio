@@ -1,12 +1,21 @@
-.newsletter {
-  @at-root #{&}--small {
-    min-height: 115px;
-  }
-  @at-root #{&}--text {
-    @extend .text--green;
-    letter-spacing: 0.75px;
-    @include font-size(25px);
-    line-height: 54px;
-    
-  }
+#newsletter {
+  padding: 20px 0 !important;
+  .newsletter {
+    @at-root #{&}--small {
+      min-height: 115px;
+    }
+    @at-root #{&}__text {
+      @include get-font('reg');
+      @extend .text--green;
+      @include font-size(25px);
+      letter-spacing: 0.75px;
+      line-height: 54px;
+      font-weight: lighter;
+      strong {
+        @include get-font('bold--ex');
+        font-weight: bolder;
+        text-transform: uppercase;
+      }
+    }
+  }  
 }
